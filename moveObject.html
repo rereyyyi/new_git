@@ -1,0 +1,54 @@
+<html>
+
+<head>
+        <title>Move Object</title>
+        <style>
+        #object {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #object img {
+            width: 128px;
+            height: 128px;
+        }
+    </style>
+</head>
+
+<body>
+        <div id="stage">
+                <div id="object">
+                        <img src="kitty.png" />
+                    </div>
+            </div>
+
+       
+    <script>
+        var object = document.getElementById('object');
+        var posisitionX = 0;
+        var posisitionY = 0;
+
+        document.addEventListener('keydown', function (event) {
+
+            if (event.key == 'ArrowDown') {
+                posisitionY += 10;
+                object.style.top = posisitionY + 'px';
+                console.log(event.key);
+            } else if (event.key == 'ArrowUp') {
+                posisitionY -= 10;
+                object.style.top = posisitionY + 'px';
+            } else if (event.key == 'ArrowRight') {
+                posisitionX += 10;
+                object.style.left = posisitionX + 'px';
+            } else if (event.key == 'ArrowLeft') {
+                posisitionX -= 10;
+                object.style.left = posisitionX + 'px';
+            }
+        });
+    </script>
+</body>
+
+</html>
